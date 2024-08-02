@@ -1,8 +1,7 @@
 import { CITIES } from "../types";
 
-export const setCities = (data,onSuccess,onError)=>({
+export const getCities = ()=>({
     type:CITIES,
-    data,
-    onSuccess,
-    onError
-})
+});
+
+

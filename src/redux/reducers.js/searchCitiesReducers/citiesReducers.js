@@ -1,12 +1,15 @@
-import { CITIES } from "../../actions/types";
+import { GET_CITIES_SUCCESS,GET_CITIES_FAILURE } from "../../actions/types";
 
 
 
-const citiesReducers = ({state=[],action})=>{
+const citiesReducers = (state = [], action) => {
     switch (action.type) {
-        case CITIES:
-            return[...state]
-    
+        case GET_CITIES_SUCCESS:
+            return  (action.res).data.data.city;
+
+        case GET_CITIES_FAILURE:
+            return [...state, action.res || action.error]
+
         default:
             return [...state]
     }
